@@ -1,0 +1,234 @@
+// Magic: 1f9fc9e6
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Wed Sep  5 16:11:41 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+camera.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ camera.label = PARM_LABEL("Camera", "camera") WIDTH(1.5);
+ PARM_FIELD(pathstring, "camera") VALUE(camera.val) 
+	LABELREF(camera.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(camera.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(camera.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+space.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Space", "space") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    space.menu;
+
+    { HSTRETCH }
+
+}
+set_near.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+set_near.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+set_near.gad = PARM_BUTTON("set_near", "") toggle VALUE(set_near.val);
+
+near.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ near.label = PARM_LABEL("Near Clipping", "near") WIDTH(1.32);
+ PARM(float, 1, "near", none, none) RANGE(0.001,99)
+	 LABELREF(near.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+set_far.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+set_far.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+set_far.gad = PARM_BUTTON("set_far", "") toggle VALUE(set_far.val);
+
+far.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ far.label = PARM_LABEL("Far Clipping", "far") WIDTH(1.32);
+ PARM(float, 1, "far", none, none) RANGE(0.001,99)
+	 LABELREF(far.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+sep_1.gad = NULL { }
+
+vis_mode.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vis_mode", "Visual Feedback Mode") toggle VALUE(vis_mode.val);
+
+    { HSTRETCH }
+
+}
+
+colors.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("colors", "Colors") toggle VALUE(colors.val);
+
+    { HSTRETCH }
+
+}
+
+frustrum_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    frustrum_color.label = PARM_LABEL("Frustrum", "frustrum_color") WIDTH(1.5);
+    PARM(float, 3, "frustrum_color", none, COLOR, "R,G,B") 
+	LABELREF(frustrum_color.label) HSTRETCH;
+
+}
+use_center.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+use_center.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+use_center.gad = PARM_BUTTON("use_center", "") toggle VALUE(use_center.val);
+
+center_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    center_color.label = PARM_LABEL("Center", "center_color") WIDTH(1.32);
+    PARM(float, 3, "center_color", none, COLOR, "R,G,B") 
+	LABELREF(center_color.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+
+scale_c.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ scale_c.label = PARM_LABEL("Center Scale", "scale_c") WIDTH(1.5);
+ PARM(float, 1, "scale_c", none, none) RANGE(0,10)
+	 LABELREF(scale_c.label) HSTRETCH;
+
+}
+solid.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+solid.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+solid.gad = PARM_BUTTON("solid", "") toggle VALUE(solid.val);
+
+inset.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ inset.label = PARM_LABEL("Inset", "inset") WIDTH(1.32);
+ PARM(float, 1, "inset", none, none) RANGE(-1,1)
+	 LABELREF(inset.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+
+shadedmode.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("shadedmode", "Use Lighting") toggle VALUE(shadedmode.val);
+
+    { HSTRETCH }
+
+}
+
+get_boundary_geo.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("get_boundary_geo", "Get Boundary Geometry as SOP")
+	push VALUE(get_boundary_geo.val);
+
+}
+
+folder0.gad = 
+GROUP simple "Visual Feedback"
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    colors.gad;		
+	    frustrum_color.gad;		
+	    use_center.row.join;		
+	    scale_c.gad;		
+	    solid.row.join;		
+	    shadedmode.gad;		
+} 
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "LOOK_PLAIN" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":8 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    camera.gad; 
+    space.gad; 
+    set_near.row.join; 
+    set_far.row.join; 
+    sep_1.gad; 
+    vis_mode.gad; 
+    folder0.gad; 
+    get_boundary_geo.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

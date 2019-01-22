@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippets>
+    <snippet group="C++" trigger="alias" id="" complement="" removed="false" modified="false">using $type$ = $alias$</snippet>
+    <snippet group="C++" trigger="class" id="cpp_genericclass" complement="" removed="false" modified="true">class $name$
+{
+
+/* Constructors and destructor */
+public:
+    
+    virtual
+    ~$name$(); 
+    
+    $name$();
+    
+    $name$( $name$&amp;&amp; other );
+    
+    $name$( const $name$&amp; other );
+
+
+/* Operators */    
+public:
+    
+    $name$&amp; 
+    operator=( $name$&amp;&amp; other );
+    
+    $name$&amp; 
+    operator=( const $name$&amp; other );
+
+    
+/* Getters */
+public:
+    
+    
+    
+/* Setters */
+public:
+    
+
+    
+/* Methods */
+public:
+    
+
+    
+/* Members */
+private:
+    
+    
+
+/* Private methods */
+private:</snippet>
+    <snippet group="C++" trigger="class" id="cpp_qobjectclass" complement="derived from QObject" removed="false" modified="true">class $name$ : public QObject
+{
+    Q_OBJECT
+
+/* Constructors and destructor */
+public:
+    
+    virtual
+    ~$name$(); 
+    
+    $name$();
+    
+    $name$( $name$&amp;&amp; other );
+    
+    $name$( const $name$&amp; other );
+
+
+/* Operators */    
+public:
+    
+    $name$&amp; 
+    operator=( $name$&amp;&amp; other );
+    
+    $name$&amp; 
+    operator=( const $name$&amp; other );
+
+    
+/* Getters */
+public:
+    
+    
+    
+/* Setters */
+public:
+    
+    
+    
+/* Signals */
+public signals:
+    
+
+    
+/* Methods */
+public:
+    
+
+    
+/* Members */
+private:
+    
+    
+
+/* Private methods */
+private:
+    </snippet>
+    <snippet group="C++" trigger="class" id="cpp_qwidgetclass" complement="derived from QWidget" removed="false" modified="true">class $name$ : public QWidget
+{
+    Q_OBJECT
+
+/* Constructors and destructor */
+public:
+    
+    virtual
+    ~$name$(); 
+    
+    $name$();
+
+    
+/* Getters */
+public:
+    
+    
+    
+/* Setters */
+public:
+    
+    
+    
+/* Signals */
+public signals:
+    
+
+    
+/* Methods */
+public:
+    
+
+    
+/* Members */
+private:
+    
+    
+
+/* Private methods */
+private:
+</snippet>
+    <snippet group="C++" trigger="class" id="cpp_classtemplate" complement="template" removed="false" modified="true">template &lt;typename $T$&gt;
+class $name$
+{
+
+/* Constructors and destructor */
+public:
+    
+    virtual
+    ~$name$(); 
+    
+    $name$();
+    
+    $name$( $name$&amp;&amp; other )
+    {
+        // Implement me !
+    }
+    
+    $name$( const $name$&amp; other )
+    {
+        // Implement me !
+    }
+
+
+/* Operators */    
+public:
+    
+    $name$&amp; 
+    operator=( $name$&amp;&amp; other )
+    {
+        if( this != &amp;other )
+        {
+            // Implement me !
+        }
+        
+        return *this;   
+    }
+    
+    $name$&amp; 
+    operator=( const $name$&amp; other )
+    {
+        if( this != &amp;other )
+        {
+            // Implement me !
+        }
+        
+        return *this;   
+    }
+
+    
+/* Getters */
+public:
+    
+    
+    
+/* Setters */
+public:
+    
+
+    
+/* Methods */
+public:
+    
+
+    
+/* Members */
+private:
+    
+    
+
+/* Private methods */
+private:</snippet>
+    <snippet group="C++" trigger="do" id="cpp_do" complement="" removed="false" modified="true">do 
+{
+    $$
+} while( $condition$ );</snippet>
+    <snippet group="C++" trigger="else" id="cpp_else" complement="" removed="false" modified="true">else 
+{
+    $$
+}</snippet>
+    <snippet group="C++" trigger="else" id="cpp_elsewithif" complement="with if" removed="false" modified="true">else if( $condition$ ) 
+{
+    $$
+}</snippet>
+    <snippet group="C++" trigger="for" id="cpp_for" complement="" removed="false" modified="true">for( int $var$ = 0; $var$ &lt; $total$; ++$var$ ) 
+{
+    $$
+}</snippet>
+    <snippet group="C++" trigger="for" id="" complement="const iterator" removed="false" modified="false">auto cbegin  = $container$.constBegin();
+auto cend    = $container$.constEnd();
+
+for( auto it = cbegin; it != cend; ++it )
+{
+    $$
+}</snippet>
+    <snippet group="C++" trigger="for" id="" complement="iterator" removed="false" modified="false">auto begin  = $container$.begin();
+auto end    = $container$.end();
+
+for( auto it = begin; it != end; ++it )
+{
+    $$
+}</snippet>
+    <snippet group="C++" trigger="foreach" id="cpp_foreach" complement="" removed="false" modified="true">foreach( $var$, $container$ ) 
+{
+    $$
+}</snippet>
+    <snippet group="C++" trigger="if" id="cpp_if" complement="" removed="false" modified="true">if( $condition$ ) 
+{
+    $$
+}</snippet>
+    <snippet group="C++" trigger="if" id="cpp_ifandelse" complement="and else" removed="false" modified="true">if( $condition$ ) 
+{
+    $$
+} 
+else 
+{
+
+}</snippet>
+    <snippet group="C++" trigger="main" id="cpp_main" complement="" removed="false" modified="true">int main( int argc, char **argv )
+{
+    $$
+            
+    return 0;
+}
+</snippet>
+    <snippet group="C++" trigger="namespace" id="cpp_namespace" complement="" removed="false" modified="true">namespace $name$ 
+{
+    $$
+} // namespace $name$</snippet>
+    <snippet group="C++" trigger="namespace" id="cpp_namespace_with_comment" complement="with closing brace comment" removed="false" modified="true">namespace $name$ 
+{
+    $$
+} // namespace $name$</snippet>
+    <snippet group="C++" trigger="switch" id="cpp_switch" complement="" removed="false" modified="true">switch ($control$) 
+{
+case $value$:
+    $$
+    break;
+default:
+    break;
+}</snippet>
+    <snippet group="C++" trigger="try" id="cpp_trycatch" complement="and catch" removed="false" modified="true">try 
+{
+    $$
+} 
+catch( ... ) 
+{
+    
+}</snippet>
+    <snippet group="C++" trigger="while" id="cpp_while" complement="" removed="false" modified="true">while( $condition$ ) 
+{
+    $$
+}</snippet>
+</snippets>

@@ -1,0 +1,40 @@
+{
+	"stats":{
+		"start_time":1536163858,
+		"end_time":1536164824,
+		"idle_time":952,
+		"log_id":"0x38A1D759-0x00000064-0x5B900012-0x000001AF",
+		"persistent_stats":{
+			"colors_scheme":"Houdini Dark"
+		},
+		"flags":[
+		],
+		"counts":{
+		},
+		"logs":{
+		},
+		"sums_and_counts":{
+		},
+		"strings":{
+		},
+		"checksum":"4009d1f4b5767bf936ddb926f678961b"
+	},
+	"machine_config":{
+		"houdini_major_version":"16",
+		"houdini_minor_version":"5",
+		"houdini_build_version":"496",
+		"application_name":"houdini",
+		"license_category":"Commercial",
+		"platform":"Windows 10.0.10586",
+		"operating_system":"Windows 10 Enterprise 2016 LTSB x64",
+		"number_of_processors":8,
+		"system_memory":"7.97 GB",
+		"graphics_card":"GeForce GTX 1060 6GB/PCIe/SSE2",
+		"graphics_card_version":"4.6.0 NVIDIA 399.07",
+		"mac_address_hash":"2b6674da98c87c6598b59f178464e737",
+		"user_config_version":20140523,
+		"system_resolution":"1920x1080",
+		"cpu_info":"Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz",
+		"config_hash":"a8eb2c6c181123a9bb369d19a1806660"
+	}
+}

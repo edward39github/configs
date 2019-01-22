@@ -1,0 +1,761 @@
+// Magic: 25cdf86d
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Wed Sep  5 15:20:21 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+op_label.gad = NULL { }
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    group.label = PARM_LABEL("Point Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+triangulate.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("triangulate", "Triangulate Collider") toggle VALUE(triangulate.val);
+
+    { HSTRETCH }
+
+}
+
+optimize.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("optimize", "Optimize (Pre-triangulate)") toggle VALUE(optimize.val);
+
+    { HSTRETCH }
+
+}
+
+raydir_mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Mode", "raydir_mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    raydir_mode.menu;
+
+    { HSTRETCH }
+
+}
+
+raydir_attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    raydir_attrib.label = PARM_LABEL("Direction Attribute", "raydir_attrib") WIDTH(1.5);
+    PARM_FIELD(string, "raydir_attrib") VALUE(raydir_attrib.val) 
+	LABELREF(raydir_attrib.label) HSTRETCH;
+
+    raydir_attrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+raydir_const.gad = ROW
+{
+   HSTRETCH
+
+   raydir_const.label = PARM_LABEL("Ray Direction", "raydir_const") WIDTH(1.5);
+   PARM(float, 3, "raydir_const", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(raydir_const.label)
+	HSTRETCH;
+
+}
+
+reverserays.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("reverserays", "Reverse Rays") toggle VALUE(reverserays.val);
+
+    { HSTRETCH }
+
+}
+
+farthest.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("farthest", "Intersect Farthest Surface") toggle VALUE(farthest.val);
+
+    { HSTRETCH }
+
+}
+
+ray_nearclip.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ray_nearclip.label = PARM_LABEL("Ray, Near Clip", "ray_nearclip") WIDTH(1.5);
+ PARM(float, 1, "ray_nearclip", none, none) RANGE(0,1000)
+	 LABELREF(ray_nearclip.label) HSTRETCH;
+
+}
+
+ray_farclip.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ray_farclip.label = PARM_LABEL("Ray, Far Clip", "ray_farclip") WIDTH(1.5);
+ PARM(float, 1, "ray_farclip", none, none) RANGE(0,1000)
+	 LABELREF(ray_farclip.label) HSTRETCH;
+
+}
+
+scale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ scale.label = PARM_LABEL("Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,1)
+	 LABELREF(scale.label) HSTRETCH;
+
+}
+
+lift.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ lift.label = PARM_LABEL("Lift", "lift") WIDTH(1.5);
+ PARM(float, 1, "lift", none, none) RANGE(-1,1)
+	 LABELREF(lift.label) HSTRETCH;
+
+}
+do_ray.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+do_ray.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+do_ray.gad = PARM_BUTTON("do_ray", "") toggle VALUE(do_ray.val);
+
+ray_attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    ray_attrib.label = PARM_LABEL("Ray Attribute", "ray_attrib") WIDTH(1.32);
+    PARM_FIELD(string, "ray_attrib") VALUE(ray_attrib.val) 
+	LABELREF(ray_attrib.label) HSTRETCH;
+
+}
+}	
+
+ray_attrib_flip.gad = ROW
+{
+    
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ray_attrib_flip", "Flip") toggle VALUE(ray_attrib_flip.val);
+
+    {  }
+
+}
+}	// Template join.bot
+
+do_dist.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+do_dist.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+do_dist.gad = PARM_BUTTON("do_dist", "") toggle VALUE(do_dist.val);
+
+dist_attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    dist_attrib.label = PARM_LABEL("Distance Attribute", "dist_attrib") WIDTH(1.32);
+    PARM_FIELD(string, "dist_attrib") VALUE(dist_attrib.val) 
+	LABELREF(dist_attrib.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+do_hitgrp.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+do_hitgrp.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+do_hitgrp.gad = PARM_BUTTON("do_hitgrp", "") toggle VALUE(do_hitgrp.val);
+
+hitgrp.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    hitgrp.label = PARM_LABEL("Ray Hit Group", "hitgrp") WIDTH(1.32);
+    PARM_FIELD(string, "hitgrp") VALUE(hitgrp.val) 
+	LABELREF(hitgrp.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+do_missgrp.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+do_missgrp.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+do_missgrp.gad = PARM_BUTTON("do_missgrp", "") toggle VALUE(do_missgrp.val);
+
+missgrp.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    missgrp.label = PARM_LABEL("Ray Miss Group", "missgrp") WIDTH(1.32);
+    PARM_FIELD(string, "missgrp") VALUE(missgrp.val) 
+	LABELREF(missgrp.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+
+getptattribs.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("getptattribs", "Import Attributes from Hits") toggle VALUE(getptattribs.val);
+
+    { HSTRETCH }
+
+}
+
+ptattribnames.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    ptattribnames.label = PARM_LABEL("Point Attributes", "ptattribnames") WIDTH(1.5);
+    PARM_FIELD(string, "ptattribnames") VALUE(ptattribnames.val) 
+	LABELREF(ptattribnames.label) HSTRETCH;
+
+    ptattribnames.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+keepintersectattribs.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("keepintersectattribs", "Keep Intersection Attribs") toggle VALUE(keepintersectattribs.val);
+
+    { HSTRETCH }
+
+}
+
+intprimattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    intprimattrib.label = PARM_LABEL("Prim Attrib", "intprimattrib") WIDTH(1.5);
+    PARM_FIELD(string, "intprimattrib") VALUE(intprimattrib.val) 
+	LABELREF(intprimattrib.label) HSTRETCH;
+
+}
+
+intuattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    intuattrib.label = PARM_LABEL("U Attrib", "intuattrib") WIDTH(1.5);
+    PARM_FIELD(string, "intuattrib") VALUE(intuattrib.val) 
+	LABELREF(intuattrib.label) HSTRETCH;
+
+}
+
+intvattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    intvattrib.label = PARM_LABEL("V Attrib", "intvattrib") WIDTH(1.5);
+    PARM_FIELD(string, "intvattrib") VALUE(intvattrib.val) 
+	LABELREF(intvattrib.label) HSTRETCH;
+
+}
+
+debug.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("debug", "Debug (Show Code)") toggle VALUE(debug.val);
+
+    { HSTRETCH }
+
+}
+
+__code_ptattribs.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top)
+
+    __code_ptattribs.label = PARM_LABEL("code: hit attribs", "__code_ptattribs");
+
+    MULTILINE_PARM_FIELD ("__code_ptattribs") 
+
+    	LABELREF(__code_ptattribs.label) 
+
+    	VALUE(__code_ptattribs.val) 
+    	SYNTAX("") 
+    	LINES(8,40) 
+    	HSTRETCH;
+
+    {
+
+	LAYOUT(vertical)
+	{
+	    SIZE(0, 0.26)
+	}
+
+    }
+
+}
+
+envelope.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ envelope.label = PARM_LABEL("Envelope", "envelope") WIDTH(1.5);
+ PARM(float, 1, "envelope", none, none) RANGE(0,1)
+	 LABELREF(envelope.label) HSTRETCH;
+
+}
+use_weight.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+use_weight.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+use_weight.gad = PARM_BUTTON("use_weight", "") toggle VALUE(use_weight.val);
+
+weight_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    weight_name.label = PARM_LABEL("Weight Name", "weight_name") WIDTH(1.32);
+    PARM_FIELD(string, "weight_name") VALUE(weight_name.val) 
+	LABELREF(weight_name.label) HSTRETCH;
+
+    weight_name.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+}	
+
+invert_weight.gad = ROW
+{
+    
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert_weight", "Invert") toggle VALUE(invert_weight.val);
+
+    {  }
+
+}
+}	// Template join.bot
+
+
+sep_1.sval := 1;
+
+sep_1.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+
+    SWITCHER tight
+    {
+	VALUE(sep_1.sval) HSTRETCH
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[3]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[4]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[5]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[6]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[7]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[8]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[9]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[10]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[11]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[12]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[13]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[14]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL VALUE(sep_1.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[14]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(sep_1.val[15]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+    }
+}
+
+stickprimnum.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    stickprimnum.label = PARM_LABEL("Prim Num Attrib", "stickprimnum") WIDTH(1.5);
+    PARM_FIELD(string, "stickprimnum") VALUE(stickprimnum.val) 
+	LABELREF(stickprimnum.label) HSTRETCH;
+
+    stickprimnum.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+stickprimu.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    stickprimu.label = PARM_LABEL("Prim U Attrib", "stickprimu") WIDTH(1.5);
+    PARM_FIELD(string, "stickprimu") VALUE(stickprimu.val) 
+	LABELREF(stickprimu.label) HSTRETCH;
+
+    stickprimu.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+stickprimv.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    stickprimv.label = PARM_LABEL("Prim V Attrib", "stickprimv") WIDTH(1.5);
+    PARM_FIELD(string, "stickprimv") VALUE(stickprimv.val) 
+	LABELREF(stickprimv.label) HSTRETCH;
+
+    stickprimv.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+guide.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("guide", "Show Guide Geometry") toggle VALUE(guide.val);
+
+    { HSTRETCH }
+
+}
+
+mainmode.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    { LOOK(none) SIZE(0, 0.05) }	
+
+    TABDIALOG radio
+    { 
+	VALUE(mainmode.gad.val) STRETCH(1,0)
+
+	TAB "Ray"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    raydir_mode.gad;		
+	    raydir_attrib.gad;		
+	    raydir_const.gad;		
+	    reverserays.gad;		
+	    farthest.gad;		
+	    ray_nearclip.gad;		
+	    ray_farclip.gad;		
+	    scale.gad;		
+	    lift.gad;		
+	    do_ray.row.join;		
+	    do_dist.row.join;		
+	    do_hitgrp.row.join;		
+	    do_missgrp.row.join;		
+	    getptattribs.gad;		
+	    ptattribnames.gad;		
+	    keepintersectattribs.gad;		
+	    intprimattrib.gad;		
+	    intuattrib.gad;		
+	    intvattrib.gad;		
+	    debug.gad;		
+	    __code_ptattribs.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Stick"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    envelope.gad;		
+	    use_weight.row.join;		
+	    sep_1.gad;		
+	    stickprimnum.gad;		
+	    stickprimu.gad;		
+	    stickprimv.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    op_label.gad; 
+    group.gad; 
+    triangulate.gad; 
+    optimize.gad; 
+    mainmode.gad; 
+    guide.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

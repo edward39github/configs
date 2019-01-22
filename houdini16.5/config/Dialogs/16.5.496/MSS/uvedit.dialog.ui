@@ -1,0 +1,76 @@
+// Magic: 73d63b47
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Fri Aug 31 02:48:35 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+components.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Components", "components") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    components.buttonstrip;
+
+    { HSTRETCH }
+
+}
+
+sloppy.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    sloppy.buttonstrip;
+
+    { HSTRETCH }
+
+}
+
+handlereset.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("handlereset", "Reset Handle on Each New Operation") toggle VALUE(handlereset.val);
+
+    { HSTRETCH }
+
+}
+
+handlehide.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("handlehide", "Hide Handle on Immediate Selection Drag") toggle VALUE(handlehide.val);
+
+    { HSTRETCH }
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    components.gad; 
+    sloppy.gad; 
+    handlereset.gad; 
+    handlehide.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

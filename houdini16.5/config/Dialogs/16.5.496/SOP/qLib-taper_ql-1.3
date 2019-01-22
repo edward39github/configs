@@ -1,0 +1,59 @@
+// Magic: 6fea6973
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Wed Sep  5 16:18:44 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+upper_taper.gad = ROW
+{
+   HSTRETCH
+
+   upper_taper.label = PARM_LABEL("Upper Taper", "upper_taper") ;
+   PARM(float, 2, "upper_taper", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(upper_taper.label)
+	HSTRETCH;
+
+}
+
+lower_taper.gad = ROW
+{
+   HSTRETCH
+
+   lower_taper.label = PARM_LABEL("Lower Taper", "lower_taper") ;
+   PARM(float, 2, "lower_taper", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(lower_taper.label)
+	HSTRETCH;
+
+}
+
+flare_factor.gad = ROW
+{
+   HSTRETCH
+
+   flare_factor.label = PARM_LABEL("Flare Factor", "flare_factor") ;
+   PARM(float, 2, "flare_factor", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(flare_factor.label)
+	HSTRETCH;
+
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":12 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":13 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":14 Macro "LOOK_PLAIN" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":15 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH  JUSTIFY(left, center)
+    upper_taper.gad; 
+    lower_taper.gad; 
+    flare_factor.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val) HSTRETCH
+
+    dialog_norm.gad;
+}

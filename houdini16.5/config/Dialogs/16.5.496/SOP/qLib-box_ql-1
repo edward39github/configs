@@ -1,0 +1,220 @@
+// Magic: 9ce8f1f7
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Wed Sep  5 15:22:26 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+has_input.gad = NULL { }
+
+bmin.gad = ROW
+{
+   HSTRETCH
+
+   bmin.label = PARM_LABEL("Min", "bmin") WIDTH(1.5);
+   PARM(float, 3, "bmin", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bmin.label)
+	HSTRETCH;
+
+}
+
+bmax.gad = ROW
+{
+   HSTRETCH
+
+   bmax.label = PARM_LABEL("Max", "bmax") WIDTH(1.5);
+   PARM(float, 3, "bmax", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bmax.label)
+	HSTRETCH;
+
+}
+
+divmode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Divison Mode", "divmode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    divmode.menu;
+
+    { HSTRETCH }
+
+}
+
+divrate.gad = ROW
+{
+   HSTRETCH
+
+   divrate.label = PARM_LABEL("Axis Divisions", "divrate") WIDTH(1.5);
+   PARM(integer, 3, "divrate", none, none, "X,Y,Z")
+	RANGE(1,50) LOCK_RANGE_MIN LABELREF(divrate.label)
+	HSTRETCH;
+
+}
+
+divsize.gad = ROW
+{
+   HSTRETCH
+
+   divsize.label = PARM_LABEL("Size", "divsize") WIDTH(1.5);
+   PARM(float, 3, "divsize", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(divsize.label)
+	HSTRETCH;
+
+}
+
+divoffset.gad = ROW
+{
+   HSTRETCH
+
+   divoffset.label = PARM_LABEL("Offset", "divoffset") WIDTH(1.5);
+   PARM(float, 3, "divoffset", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(divoffset.label)
+	HSTRETCH;
+
+}
+
+consolidatepts.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("consolidatepts", "Consolidate Corner Points") toggle VALUE(consolidatepts.val);
+
+    { HSTRETCH }
+
+}
+
+orientedbbox.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("orientedbbox", "Oriented Bounding Box") toggle VALUE(orientedbbox.val);
+
+    { HSTRETCH }
+
+}
+
+flip.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("flip", "Flip Face Normals") toggle VALUE(flip.val);
+
+    { HSTRETCH }
+
+}
+side_presets.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+side_presets.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    side_presets.menu;
+
+    {  }
+
+}
+
+side_xp.gad = ROW
+{
+    
+
+    PARM_BUTTON("side_xp", "X+") toggle VALUE(side_xp.val);
+
+    {  }
+
+}
+
+side_yp.gad = ROW
+{
+    
+
+    PARM_BUTTON("side_yp", "Y+") toggle VALUE(side_yp.val);
+
+    {  }
+
+}
+
+side_zp.gad = ROW
+{
+    
+
+    PARM_BUTTON("side_zp", "Z+") toggle VALUE(side_zp.val);
+
+    {  }
+
+}
+
+side_xn.gad = ROW
+{
+    
+
+    PARM_BUTTON("side_xn", "X-") toggle VALUE(side_xn.val);
+
+    {  }
+
+}
+
+side_yn.gad = ROW
+{
+    
+
+    PARM_BUTTON("side_yn", "Y-") toggle VALUE(side_yn.val);
+
+    {  }
+
+}
+
+side_zn.gad = ROW
+{
+    
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("side_zn", "Z-") toggle VALUE(side_zn.val);
+
+    {  }
+
+}
+}	// Template join.bot
+
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    has_input.gad; 
+    bmin.gad; 
+    bmax.gad; 
+    divmode.gad; 
+    divrate.gad; 
+    divsize.gad; 
+    divoffset.gad; 
+    consolidatepts.gad; 
+    orientedbbox.gad; 
+    flip.gad; 
+    side_presets.row.join; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

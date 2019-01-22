@@ -1,0 +1,45 @@
+// Magic: 8fe0502b
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Wed Sep  5 16:06:49 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+divs.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ divs.label = PARM_LABEL("Divisions", "divs");
+ PARM(integer, 1, "divs", none, field) RANGE(1,50)
+	LOCK_RANGE_MIN LABELREF(divs.label) HSTRETCH;
+
+}
+
+exponent.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ exponent.label = PARM_LABEL("Exponent", "exponent");
+ PARM(float, 1, "exponent", none, field) RANGE(0.5,6)
+	 LABELREF(exponent.label) HSTRETCH;
+
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":12 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":13 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":14 Macro "LOOK_PLAIN" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":15 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH  JUSTIFY(left, center)
+    divs.gad; 
+    exponent.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val) HSTRETCH
+
+    dialog_norm.gad;
+}

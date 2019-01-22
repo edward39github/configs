@@ -1,0 +1,484 @@
+// Magic: 895fc40d
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Wed Sep  5 15:01:39 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+resolution.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ resolution.label = PARM_LABEL("Resolution", "resolution") WIDTH(1.5);
+ PARM(integer, 1, "resolution", none, none) RANGE(1,512)
+	 LABELREF(resolution.label) HSTRETCH;
+
+}
+
+gamma.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ gamma.label = PARM_LABEL("Gamma", "gamma") WIDTH(1.5);
+ PARM(float, 1, "gamma", none, none) RANGE(0,10)
+	 LABELREF(gamma.label) HSTRETCH;
+
+}
+
+sun_show_disc.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("sun_show_disc", "Show Disc") toggle VALUE(sun_show_disc.val);
+
+    { HSTRETCH }
+
+}
+
+sun_disc_size.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sun_disc_size.label = PARM_LABEL("Disc Size", "sun_disc_size") WIDTH(1.5);
+ PARM(float, 1, "sun_disc_size", none, none) RANGE(0.0001,0.999)
+	LOCK_RANGE LABELREF(sun_disc_size.label) HSTRETCH;
+
+}
+
+sun_disc_opacity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sun_disc_opacity.label = PARM_LABEL("Disc Opacity", "sun_disc_opacity") WIDTH(1.5);
+ PARM(float, 1, "sun_disc_opacity", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(sun_disc_opacity.label) HSTRETCH;
+
+}
+
+sun_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    sun_color.label = PARM_LABEL("Sun Color", "sun_color") WIDTH(1.5);
+    PARM(float, 3, "sun_color", none, COLOR, "R,G,B") 
+	LABELREF(sun_color.label) HSTRETCH;
+
+}
+
+sun_brightness.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sun_brightness.label = PARM_LABEL("Sun Brightness", "sun_brightness") WIDTH(1.5);
+ PARM(float, 1, "sun_brightness", none, LOGSCALE) RANGE(0,100)
+	LOCK_RANGE_MIN LABELREF(sun_brightness.label) HSTRETCH;
+
+}
+
+sun_dir_spec.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Use", "sun_dir_spec") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    sun_dir_spec.menu;
+
+    { HSTRETCH }
+
+}
+
+sun_dir_rotate.gad = ROW
+{
+   HSTRETCH
+
+   sun_dir_rotate.label = PARM_LABEL("Rotate", "sun_dir_rotate") WIDTH(1.5);
+   PARM(float, 3, "sun_dir_rotate", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(sun_dir_rotate.label)
+	HSTRETCH;
+
+}
+
+sun_dir_vector.gad = ROW
+{
+   HSTRETCH
+
+   sun_dir_vector.label = PARM_LABEL("Direction Vector", "sun_dir_vector") WIDTH(1.5);
+   PARM(float, 3, "sun_dir_vector", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(sun_dir_vector.label)
+	HSTRETCH;
+
+}
+
+sun_azimuth.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sun_azimuth.label = PARM_LABEL("Azimuth", "sun_azimuth") WIDTH(1.5);
+ PARM(float, 1, "sun_azimuth", none, none) RANGE(0,360)
+	 LABELREF(sun_azimuth.label) HSTRETCH;
+
+}
+
+sun_elevation.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sun_elevation.label = PARM_LABEL("Elevation", "sun_elevation") WIDTH(1.5);
+ PARM(float, 1, "sun_elevation", none, none) RANGE(0,90)
+	 LABELREF(sun_elevation.label) HSTRETCH;
+
+}
+
+geo_latitude.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ geo_latitude.label = PARM_LABEL("Latitude", "geo_latitude") WIDTH(1.5);
+ PARM(float, 1, "geo_latitude", none, none) RANGE(-90,90)
+	LOCK_RANGE LABELREF(geo_latitude.label) HSTRETCH;
+
+}
+
+geo_longitude.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ geo_longitude.label = PARM_LABEL("Longitude", "geo_longitude") WIDTH(1.5);
+ PARM(float, 1, "geo_longitude", none, none) RANGE(-180,180)
+	LOCK_RANGE LABELREF(geo_longitude.label) HSTRETCH;
+
+}
+geo_month.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+geo_month.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("Date", "geo_month") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    geo_month.menu;
+
+    {  }
+
+}
+
+geo_day.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ PARM(integer, 1, "geo_day", none, none) RANGE(1,31)
+	LOCK_RANGE HSTRETCH;
+
+}
+}	// Template join.bot
+
+geo_time.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+geo_time.gad = ROW
+{
+   HSTRETCH
+
+   geo_time.label = PARM_LABEL("Time", "geo_time") WIDTH(1.5);
+   PARM(float, 2, "geo_time", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(geo_time.label)
+	HSTRETCH;
+
+}
+
+geo_hr_spec.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    geo_hr_spec.menu;
+
+    {  }
+
+}
+
+geo_time_zone.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    geo_time_zone.menu;
+
+    {  }
+
+}
+
+geo_daylight.gad = ROW
+{
+    
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("geo_daylight", "Daylight Saving") toggle VALUE(geo_daylight.val);
+
+    {  }
+
+}
+}	// Template join.bot
+
+
+geo_doy.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ geo_doy.label = PARM_LABEL("Day of Year", "geo_doy") WIDTH(1.5);
+ PARM(float, 1, "geo_doy", none, none) RANGE(0,365)
+	LOCK_RANGE LABELREF(geo_doy.label) HSTRETCH;
+
+}
+
+sky_color_spec.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Use", "sky_color_spec") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    sky_color_spec.menu;
+
+    { HSTRETCH }
+
+}
+
+sky_turbidity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sky_turbidity.label = PARM_LABEL("Haziness", "sky_turbidity") WIDTH(1.5);
+ PARM(float, 1, "sky_turbidity", none, none) RANGE(0,10)
+	 LABELREF(sky_turbidity.label) HSTRETCH;
+
+}
+
+sky_brightness.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sky_brightness.label = PARM_LABEL("Brightness", "sky_brightness") WIDTH(1.5);
+ PARM(float, 1, "sky_brightness", none, none) RANGE(0,10)
+	 LABELREF(sky_brightness.label) HSTRETCH;
+
+}
+
+sky_ramp.si_rampedit = COLOR_RAMP VALUE(sky_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+sky_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+
+    ROW
+    {
+	LOOK(plain) JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	sky_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(sky_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+sky_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(sky_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(sky_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    sky_ramp.toggleparms.gad
+      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+	HELP("Hide Controls")
+	VALUE(sky_ramp.toggle.val)
+	SENDSKEY("h.pane.parms.toggle_ramp_parms")
+	LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+}
+
+sky_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    sky_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	sky_ramp.buttons.gad VSTRETCH;
+
+	sky_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+sky_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Color Ramp", "sky_ramp");
+
+	{ HSTRETCH }
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) LOOK(lightline) HSTRETCH
+
+	sky_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(sky_ramp.hideparms.val) HSTRETCH
+	    sky_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+ground_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Render Ground As", "ground_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    ground_type.menu;
+
+    { HSTRETCH }
+
+}
+
+ground_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    ground_color.label = PARM_LABEL("Albedo", "ground_color") WIDTH(1.5);
+    PARM(float, 3, "ground_color", none, COLOR, "R,G,B") 
+	LABELREF(ground_color.label) HSTRETCH;
+
+}
+
+ground_normal.gad = ROW
+{
+   HSTRETCH
+
+   ground_normal.label = PARM_LABEL("Normal", "ground_normal") WIDTH(1.5);
+   PARM(float, 3, "ground_normal", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(ground_normal.label)
+	HSTRETCH;
+
+}
+
+horizon_elevation.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ horizon_elevation.label = PARM_LABEL("Horizon Elevation", "horizon_elevation") WIDTH(1.5);
+ PARM(float, 1, "horizon_elevation", none, none) RANGE(-90,90)
+	 LABELREF(horizon_elevation.label) HSTRETCH;
+
+}
+
+folder1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(folder1.gad.val) STRETCH(1,0)
+
+	TAB "Sun"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    sun_show_disc.gad;		
+	    sun_disc_size.gad;		
+	    sun_disc_opacity.gad;		
+	    sun_color.gad;		
+	    sun_brightness.gad;		
+	    sun_dir_spec.gad;		
+	    sun_dir_rotate.gad;		
+	    sun_dir_vector.gad;		
+	    sun_azimuth.gad;		
+	    sun_elevation.gad;		
+	    geo_latitude.gad;		
+	    geo_longitude.gad;		
+	    geo_month.row.join;		
+	    geo_time.row.join;		
+	    geo_doy.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Sky"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    sky_color_spec.gad;		
+	    sky_turbidity.gad;		
+	    sky_brightness.gad;		
+	    sky_ramp.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Ground"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    ground_type.gad;		
+	    ground_color.gad;		
+	    ground_normal.gad;		
+	    horizon_elevation.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    resolution.gad; 
+    gamma.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,5 @@
+h.pane.parms.copy_parm	"Copy Parameter"	"Copy parameter"	 Ctrl+Shift+C
+h.pane.gview.redoselection	"Restart Selecting"	"Restart selecting"	
+h.pane.parms.paste_rel_refs	"Paste Copied Relative Refs"	"Paste copied relative refs"	 Ctrl+Shift+V
+h.pane.gview.state.view.cycle_view_context	"Cycle View Context"	"Cycle view context"	 `
+h.pane.wsheet.opparms	"Show Parameter Dialog"	"Toggle the visibility of the parameter dialog for the current node"	 P Shift+Q

@@ -1,0 +1,623 @@
+// Magic: ef83e9c8
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Tue Sep  4 20:30:28 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    name.label = PARM_LABEL("Wall Name", "name") WIDTH(1.5);
+    PARM_FIELD(string, "name") VALUE(name.val) 
+	LABELREF(name.label) HSTRETCH;
+
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+precision.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ precision.label = PARM_LABEL("Precision (cm)", "precision") WIDTH(1.5);
+ PARM(integer, 1, "precision", none, none) RANGE(1,20)
+	LOCK_RANGE_MIN LABELREF(precision.label) HSTRETCH;
+
+}
+
+t.gad = ROW
+{
+   HSTRETCH
+
+   t.label = PARM_LABEL("Translate", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(0,10)  LABELREF(t.label)
+	HSTRETCH;
+
+}
+divx.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+divx.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("Pivot Alignment", "divx") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    divx.menu;
+
+    {  }
+
+}
+
+divy.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    divy.menu;
+
+    {  }
+
+}
+
+divz.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    divz.menu;
+
+    {  }
+
+}
+}	// Template join.bot
+
+
+sepparm4.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+uscale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ uscale.label = PARM_LABEL("Uniform Scale", "uscale") WIDTH(1.5);
+ PARM(float, 1, "uscale", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(uscale.label) HSTRETCH;
+
+}
+
+sizescale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sizescale.label = PARM_LABEL("Size Scale", "sizescale") WIDTH(1.5);
+ PARM(float, 1, "sizescale", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(sizescale.label) HSTRETCH;
+
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+sizex.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sizex.label = PARM_LABEL("Size X (m)", "sizex") WIDTH(1.5);
+ PARM(float, 1, "sizex", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(sizex.label) HSTRETCH;
+
+}
+
+sizey.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sizey.label = PARM_LABEL("Size Y (m)", "sizey") WIDTH(1.5);
+ PARM(float, 1, "sizey", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(sizey.label) HSTRETCH;
+
+}
+
+sizez.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sizez.label = PARM_LABEL("Size Z (m)", "sizez") WIDTH(1.5);
+ PARM(float, 1, "sizez", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(sizez.label) HSTRETCH;
+
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+scalex.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ scalex.label = PARM_LABEL("Size Scale X", "scalex") WIDTH(1.5);
+ PARM(integer, 1, "scalex", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(scalex.label) HSTRETCH;
+
+}
+
+scaley.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ scaley.label = PARM_LABEL("Size Scale Y", "scaley") WIDTH(1.5);
+ PARM(integer, 1, "scaley", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(scaley.label) HSTRETCH;
+
+}
+
+scalez.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ scalez.label = PARM_LABEL("Size Scale Z", "scalez") WIDTH(1.5);
+ PARM(integer, 1, "scalez", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(scalez.label) HSTRETCH;
+
+}
+
+creategroups.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("creategroups", "Create Groups") toggle VALUE(creategroups.val);
+
+    { HSTRETCH }
+
+}
+
+sepparm11.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+main_create.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+main_create.gad = ROW
+{
+    
+
+    PARM_BUTTON("main_create", "All") toggle VALUE(main_create.val);
+
+    {  }
+
+}
+
+main_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    main_type.menu;
+
+    {  }
+
+}
+
+main_preffix.gad = ROW
+{
+    
+
+    PARM_BUTTON("main_preffix", "Name Preffix") toggle VALUE(main_preffix.val);
+
+    {  }
+
+}
+
+main_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    PARM_FIELD(string, "main_name") VALUE(main_name.val) HSTRETCH;
+
+}
+}	// Template join.bot
+
+
+sepparm5.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+xpos_create.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+xpos_create.gad = ROW
+{
+    
+
+    PARM_BUTTON("xpos_create", "X +") toggle VALUE(xpos_create.val);
+
+    {  }
+
+}
+
+grouptype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    grouptype.menu;
+
+    {  }
+
+}
+
+xpos_preffix.gad = ROW
+{
+    
+
+    PARM_BUTTON("xpos_preffix", "Name Preffix") toggle VALUE(xpos_preffix.val);
+
+    {  }
+
+}
+
+xpos_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    PARM_FIELD(string, "xpos_name") VALUE(xpos_name.val) HSTRETCH;
+
+}
+}	// Template join.bot
+
+xneg_create.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+xneg_create.gad = ROW
+{
+    
+
+    PARM_BUTTON("xneg_create", "X  -") toggle VALUE(xneg_create.val);
+
+    {  }
+
+}
+
+grouptype2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    grouptype2.menu;
+
+    {  }
+
+}
+
+xneg_preffix.gad = ROW
+{
+    
+
+    PARM_BUTTON("xneg_preffix", "Name Preffix") toggle VALUE(xneg_preffix.val);
+
+    {  }
+
+}
+
+xneg_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    PARM_FIELD(string, "xneg_name") VALUE(xneg_name.val) HSTRETCH;
+
+}
+}	// Template join.bot
+
+
+sepparm7.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+ypos_create.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ypos_create.gad = ROW
+{
+    
+
+    PARM_BUTTON("ypos_create", "Y +") toggle VALUE(ypos_create.val);
+
+    {  }
+
+}
+
+grouptype3.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    grouptype3.menu;
+
+    {  }
+
+}
+
+ypos_preffix.gad = ROW
+{
+    
+
+    PARM_BUTTON("ypos_preffix", "Name Preffix") toggle VALUE(ypos_preffix.val);
+
+    {  }
+
+}
+
+ypos_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    PARM_FIELD(string, "ypos_name") VALUE(ypos_name.val) HSTRETCH;
+
+}
+}	// Template join.bot
+
+yneg_create.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+yneg_create.gad = ROW
+{
+    
+
+    PARM_BUTTON("yneg_create", "Y  -") toggle VALUE(yneg_create.val);
+
+    {  }
+
+}
+
+grouptype4.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    grouptype4.menu;
+
+    {  }
+
+}
+
+yneg_preffix.gad = ROW
+{
+    
+
+    PARM_BUTTON("yneg_preffix", "Name Preffix") toggle VALUE(yneg_preffix.val);
+
+    {  }
+
+}
+
+yneg_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    PARM_FIELD(string, "yneg_name") VALUE(yneg_name.val) HSTRETCH;
+
+}
+}	// Template join.bot
+
+
+sepparm9.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+zpos_create.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+zpos_create.gad = ROW
+{
+    
+
+    PARM_BUTTON("zpos_create", "Z +") toggle VALUE(zpos_create.val);
+
+    {  }
+
+}
+
+grouptype5.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    grouptype5.menu;
+
+    {  }
+
+}
+
+zpos_preffix.gad = ROW
+{
+    
+
+    PARM_BUTTON("zpos_preffix", "Name Preffix") toggle VALUE(zpos_preffix.val);
+
+    {  }
+
+}
+
+zpos_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    PARM_FIELD(string, "zpos_name") VALUE(zpos_name.val) HSTRETCH;
+
+}
+}	// Template join.bot
+
+zneg_create.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+zneg_create.gad = ROW
+{
+    
+
+    PARM_BUTTON("zneg_create", "Z  -") toggle VALUE(zneg_create.val);
+
+    {  }
+
+}
+
+grouptype6.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    grouptype6.menu;
+
+    {  }
+
+}
+
+zneg_preffix.gad = ROW
+{
+    
+
+    PARM_BUTTON("zneg_preffix", "Name Preffix") toggle VALUE(zneg_preffix.val);
+
+    {  }
+
+}
+
+zneg_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    PARM_FIELD(string, "zneg_name") VALUE(zneg_name.val) HSTRETCH;
+
+}
+}	// Template join.bot
+
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Size"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    uscale.gad;		
+	    sizescale.gad;		
+	    sepparm2.gad;		
+	    sizex.gad;		
+	    sizey.gad;		
+	    sizez.gad;		
+	    sepparm.gad;		
+	    scalex.gad;		
+	    scaley.gad;		
+	    scalez.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Groups"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    creategroups.gad;		
+	    sepparm11.gad;		
+	    main_create.row.join;		
+	    sepparm5.gad;		
+	    xpos_create.row.join;		
+	    xneg_create.row.join;		
+	    sepparm7.gad;		
+	    ypos_create.row.join;		
+	    yneg_create.row.join;		
+	    sepparm9.gad;		
+	    zpos_create.row.join;		
+	    zneg_create.row.join;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    name.gad; 
+    sepparm3.gad; 
+    precision.gad; 
+    t.gad; 
+    divx.row.join; 
+    sepparm4.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

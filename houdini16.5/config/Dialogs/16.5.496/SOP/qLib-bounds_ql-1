@@ -1,0 +1,387 @@
+// Magic: c212ea9b
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Wed Sep  5 15:23:57 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+op_label.gad = NULL { }
+group.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+grouptype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    grouptype.menu;
+
+    {  }
+
+}
+}	// Template join.bot
+
+sep_0.gad = NULL { }
+
+convert_to_poly.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("convert_to_poly", "Convert Input to Polygons") toggle VALUE(convert_to_poly.val);
+
+    { HSTRETCH }
+
+}
+
+lod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Geometry Detail", "lod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    lod.menu;
+
+    { HSTRETCH }
+
+}
+bound_over_time.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bound_over_time.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bound_over_time.gad = PARM_BUTTON("bound_over_time", "") toggle VALUE(bound_over_time.val);
+
+range.gad = ROW
+{
+   HSTRETCH
+
+   range.label = PARM_LABEL("Start/End/Inc", "range") WIDTH(1.32);
+   PARM(float, 3, "range", none, none, "X,Y,Z")
+	RANGE(0,240)  LABELREF(range.label)
+	HSTRETCH;
+
+}
+}	
+
+range_presets.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center)
+
+    range_presets.menu LOOK(menuiconbutton) SIZE(0.26, 0.26);
+
+}
+}	// Template join.bot
+
+sep_1.gad = NULL { }
+
+output_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Output Type", "output_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    output_type.menu;
+
+    { HSTRETCH }
+
+}
+
+minsize.gad = ROW
+{
+   HSTRETCH
+
+   minsize.label = PARM_LABEL("Minimum Size", "minsize") WIDTH(1.5);
+   PARM(float, 3, "minsize", none, none, "X,Y,Z")
+	RANGE(0,1) LOCK_RANGE_MIN LABELREF(minsize.label)
+	HSTRETCH;
+
+}
+
+minpad.gad = ROW
+{
+   HSTRETCH
+
+   minpad.label = PARM_LABEL("Lower Padding", "minpad") WIDTH(1.5);
+   PARM(float, 3, "minpad", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(minpad.label)
+	HSTRETCH;
+
+}
+
+maxpad.gad = ROW
+{
+   HSTRETCH
+
+   maxpad.label = PARM_LABEL("Upper Padding", "maxpad") WIDTH(1.5);
+   PARM(float, 3, "maxpad", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(maxpad.label)
+	HSTRETCH;
+
+}
+sep_2.gad = NULL { }
+
+show_guide.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_guide", "Show Guide") toggle VALUE(show_guide.val);
+
+    { HSTRETCH }
+
+}
+
+guide_color.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("guide_color", "Guide Colors") toggle VALUE(guide_color.val);
+
+    { HSTRETCH }
+
+}
+
+add_prefix.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("add_prefix", "Add 'bounds' Name Prefix")
+	push VALUE(add_prefix.val);
+
+}
+
+bbsize.gad = ROW
+{
+   HSTRETCH
+
+   bbsize.label = PARM_LABEL("Box Size", "bbsize") WIDTH(1.5);
+   PARM(float, 3, "bbsize", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbsize.label)
+	HSTRETCH;
+
+}
+
+bbcenter.gad = ROW
+{
+   HSTRETCH
+
+   bbcenter.label = PARM_LABEL("Box Center", "bbcenter") WIDTH(1.5);
+   PARM(float, 3, "bbcenter", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbcenter.label)
+	HSTRETCH;
+
+}
+
+bbmin.gad = ROW
+{
+   HSTRETCH
+
+   bbmin.label = PARM_LABEL("Box Min", "bbmin") WIDTH(1.5);
+   PARM(float, 3, "bbmin", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbmin.label)
+	HSTRETCH;
+
+}
+bb_editable.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bb_editable.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bb_editable.gad = PARM_BUTTON("bb_editable", "") toggle VALUE(bb_editable.val);
+
+bbmax.gad = ROW
+{
+   HSTRETCH
+
+   bbmax.label = PARM_LABEL("Box Max", "bbmax") WIDTH(1.32);
+   PARM(float, 3, "bbmax", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(bbmax.label)
+	HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+bblink_path.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bblink_path.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ bblink_path.label = PARM_LABEL("Container OP Path", "bblink_path") WIDTH(1.5);
+ PARM_FIELD(pathstring, "bblink_path") VALUE(bblink_path.val) 
+	LABELREF(bblink_path.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(bblink_path.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(bblink_path.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+bblink_path_presets.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center)
+
+    bblink_path_presets.menu LOOK(menuiconbutton) SIZE(0.26, 0.26);
+
+}
+}	// Template join.bot
+
+bblink_size.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bblink_size.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    bblink_size.label = PARM_LABEL("parms: Size/Center", "bblink_size") WIDTH(1.5);
+    PARM_FIELD(string, "bblink_size") VALUE(bblink_size.val) 
+	LABELREF(bblink_size.label) HSTRETCH;
+
+}
+
+bblink_t.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    PARM_FIELD(string, "bblink_t") VALUE(bblink_t.val) HSTRETCH;
+
+}
+
+bblink_name_presets.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center)
+
+    bblink_name_presets.menu LOOK(menuiconbutton) SIZE(0.26, 0.26);
+
+}
+}	// Template join.bot
+
+
+bblink_link.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("bblink_link", "Size/Center: Link to Container")
+	push VALUE(bblink_link.val);
+
+}
+
+bblink_copy.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("bblink_copy", "Size/Center: Copy Current Values")
+	push VALUE(bblink_copy.val);
+
+}
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Output: Values"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    bbsize.gad;		
+	    bbcenter.gad;		
+	    bbmin.gad;		
+	    bb_editable.row.join;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Link to Container"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    bblink_path.row.join;		
+	    bblink_size.row.join;		
+	    bblink_link.gad;		
+	    bblink_copy.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    op_label.gad; 
+    group.row.join; 
+    sep_0.gad; 
+    convert_to_poly.gad; 
+    lod.gad; 
+    bound_over_time.row.join; 
+    sep_1.gad; 
+    output_type.gad; 
+    minsize.gad; 
+    minpad.gad; 
+    maxpad.gad; 
+    sep_2.gad; 
+    show_guide.gad; 
+    guide_color.gad; 
+    add_prefix.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

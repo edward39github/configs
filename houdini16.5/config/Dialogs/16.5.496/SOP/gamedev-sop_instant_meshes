@@ -1,0 +1,179 @@
+// Magic: e7c2ca02
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Wed Sep  5 14:26:14 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+poly_count.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ poly_count.label = PARM_LABEL("Desired Vertex Count", "poly_count") WIDTH(1.5);
+ PARM(integer, 1, "poly_count", none, none) RANGE(0,10000)
+	 LABELREF(poly_count.label) HSTRETCH;
+
+}
+
+quad_dominant.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("quad_dominant", "Quad Dominant") toggle VALUE(quad_dominant.val);
+
+    { HSTRETCH }
+
+}
+
+crease_angle.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ crease_angle.label = PARM_LABEL("Crease Angle", "crease_angle") WIDTH(1.5);
+ PARM(float, 1, "crease_angle", none, none) RANGE(0,180)
+	 LABELREF(crease_angle.label) HSTRETCH;
+
+}
+
+clear_cache.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("clear_cache", "Clear Cache")
+	push VALUE(clear_cache.val);
+
+}
+
+instant_meshes_exe.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ instant_meshes_exe.label = PARM_LABEL("Instant Meshes Location", "instant_meshes_exe") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "instant_meshes_exe") LABELREF(instant_meshes_exe.label)
+	VALUE(instant_meshes_exe.val) HSTRETCH;
+
+    instant_meshes_exe.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(instant_meshes_exe.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+remeshed_tmp_file.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ remeshed_tmp_file.label = PARM_LABEL("Remeshed Tmp File", "remeshed_tmp_file") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "remeshed_tmp_file") LABELREF(remeshed_tmp_file.label)
+	VALUE(remeshed_tmp_file.val) HSTRETCH;
+
+    remeshed_tmp_file.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(remeshed_tmp_file.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+unremeshed_tmp_file.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ unremeshed_tmp_file.label = PARM_LABEL("Unremeshed Tmp File", "unremeshed_tmp_file") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "unremeshed_tmp_file") LABELREF(unremeshed_tmp_file.label)
+	VALUE(unremeshed_tmp_file.val) HSTRETCH;
+
+    unremeshed_tmp_file.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(unremeshed_tmp_file.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+hide_instant_meshes_dialog.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("hide_instant_meshes_dialog", "Hide Instant Meshes Dialog") toggle VALUE(hide_instant_meshes_dialog.val);
+
+    { HSTRETCH }
+
+}
+
+website.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("website", "Instant Meshes Website")
+	push VALUE(website.val);
+
+}
+
+mesh_settings.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(mesh_settings.gad.val) STRETCH(1,0)
+
+	TAB "Mesh Options"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    poly_count.gad;		
+	    quad_dominant.gad;		
+	    crease_angle.gad;		
+	    clear_cache.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Settings"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    instant_meshes_exe.gad;		
+	    remeshed_tmp_file.gad;		
+	    unremeshed_tmp_file.gad;		
+	    hide_instant_meshes_dialog.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    mesh_settings.gad; 
+    website.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,117 @@
+// Magic: beac6270
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Tue Aug 28 14:59:07 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+grid_texture.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ grid_texture.label = PARM_LABEL("Grid Texture", "grid_texture") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "grid_texture") LABELREF(grid_texture.label)
+	VALUE(grid_texture.val) HSTRETCH;
+
+    grid_texture.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(grid_texture.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+grid_tiling.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ grid_tiling.label = PARM_LABEL("Grid Tiling", "grid_tiling") WIDTH(1.5);
+ PARM(float, 1, "grid_tiling", none, none) RANGE(0,10)
+	 LABELREF(grid_tiling.label) HSTRETCH;
+
+}
+
+visualize_islands.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("visualize_islands", "Visualize Islands") toggle VALUE(visualize_islands.val);
+
+    { HSTRETCH }
+
+}
+worldspace.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+worldspace.gad = ROW
+{
+    
+
+    PARM_BUTTON("worldspace", "View in Worldspace") toggle VALUE(worldspace.val);
+
+    {  }
+
+}
+
+blend.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ blend.label = PARM_LABEL("Blend", "blend") ;
+ PARM(float, 1, "blend", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(blend.label) HSTRETCH;
+
+}
+}	// Template join.bot
+
+vis_seams.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+vis_seams.gad = ROW
+{
+    
+
+    PARM_BUTTON("vis_seams", "Visualize Seams") toggle VALUE(vis_seams.val);
+
+    {  }
+
+}
+
+thickness.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ thickness.label = PARM_LABEL("Thickness", "thickness") ;
+ PARM(float, 1, "thickness", none, none) RANGE(0,10)
+	 LABELREF(thickness.label) HSTRETCH;
+
+}
+}	// Template join.bot
+
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    grid_texture.gad; 
+    grid_tiling.gad; 
+    visualize_islands.gad; 
+    worldspace.row.join; 
+    vis_seams.row.join; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

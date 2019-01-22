@@ -1,0 +1,278 @@
+// Magic: 6077fbdd
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Wed Sep  5 15:58:45 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+corner_ll.gad = ROW
+{
+   HSTRETCH
+
+   corner_ll.label = PARM_LABEL("Lower Left Corner", "corner_ll") WIDTH(1.5);
+   PARM(float, 2, "corner_ll", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(corner_ll.label)
+	HSTRETCH;
+
+}
+
+corner_ur.gad = ROW
+{
+   HSTRETCH
+
+   corner_ur.label = PARM_LABEL("Upper Right Corner", "corner_ur") WIDTH(1.5);
+   PARM(float, 2, "corner_ur", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(corner_ur.label)
+	HSTRETCH;
+
+}
+
+seed.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ seed.label = PARM_LABEL("Seed", "seed") WIDTH(1.5);
+ PARM(integer, 1, "seed", none, none) RANGE(0,999)
+	 LABELREF(seed.label) HSTRETCH;
+
+}
+limitdiv.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+limitdiv.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+limitdiv.gad = PARM_BUTTON("limitdiv", "") toggle VALUE(limitdiv.val);
+
+limit.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ limit.label = PARM_LABEL("Limit Divisions", "limit") WIDTH(1.32);
+ PARM(integer, 1, "limit", none, none) RANGE(0,29)
+	 LABELREF(limit.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+
+buildinside.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("buildinside", "Build Inside") toggle VALUE(buildinside.val);
+
+    { HSTRETCH }
+
+}
+
+innerwalls.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("innerwalls", ". Inside Walls") toggle VALUE(innerwalls.val);
+
+    { HSTRETCH }
+
+}
+
+doors.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("doors", ". Doors") toggle VALUE(doors.val);
+
+    { HSTRETCH }
+
+}
+
+outerwalls.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("outerwalls", "Maze Borders") toggle VALUE(outerwalls.val);
+
+    { HSTRETCH }
+
+}
+
+wallxn.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("wallxn", ". X-") toggle VALUE(wallxn.val);
+
+    { HSTRETCH }
+
+}
+
+wallxp.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("wallxp", ". X+") toggle VALUE(wallxp.val);
+
+    { HSTRETCH }
+
+}
+
+wallzn.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("wallzn", ". Z-") toggle VALUE(wallzn.val);
+
+    { HSTRETCH }
+
+}
+
+wallzp.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("wallzp", ". Z+") toggle VALUE(wallzp.val);
+
+    { HSTRETCH }
+
+}
+
+attribs.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("attribs", "Add Geometry Attributes") toggle VALUE(attribs.val);
+
+    { HSTRETCH }
+
+}
+
+attrib_depth.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    attrib_depth.label = PARM_LABEL("Current Depth Attrib", "attrib_depth") WIDTH(1.5);
+    PARM_FIELD(string, "attrib_depth") VALUE(attrib_depth.val) 
+	LABELREF(attrib_depth.label) HSTRETCH;
+
+    attrib_depth.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+attrib_depth_max.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    attrib_depth_max.label = PARM_LABEL("Max Depth Attrib", "attrib_depth_max") WIDTH(1.5);
+    PARM_FIELD(string, "attrib_depth_max") VALUE(attrib_depth_max.val) 
+	LABELREF(attrib_depth_max.label) HSTRETCH;
+
+    attrib_depth_max.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+attrib_primtype.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    attrib_primtype.label = PARM_LABEL("Prim Type Attrib", "attrib_primtype") WIDTH(1.5);
+    PARM_FIELD(string, "attrib_primtype") VALUE(attrib_primtype.val) 
+	LABELREF(attrib_primtype.label) HSTRETCH;
+
+    attrib_primtype.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Geometry"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    buildinside.gad;		
+	    innerwalls.gad;		
+	    doors.gad;		
+	    outerwalls.gad;		
+	    wallxn.gad;		
+	    wallxp.gad;		
+	    wallzn.gad;		
+	    wallzp.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Attributes"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    attribs.gad;		
+	    attrib_depth.gad;		
+	    attrib_depth_max.gad;		
+	    attrib_primtype.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "LOOK_PLAIN" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":8 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    corner_ll.gad; 
+    corner_ur.gad; 
+    seed.gad; 
+    limitdiv.row.join; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

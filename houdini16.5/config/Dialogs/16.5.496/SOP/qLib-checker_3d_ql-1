@@ -1,0 +1,71 @@
+// Magic: db5a2a59
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Wed Sep  5 16:16:08 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+trans.gad = ROW
+{
+   HSTRETCH
+
+   trans.label = PARM_LABEL("Translate", "trans") WIDTH(1.5);
+   PARM(float, 3, "trans", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(trans.label)
+	HSTRETCH;
+
+}
+
+rot.gad = ROW
+{
+   HSTRETCH
+
+   rot.label = PARM_LABEL("Rotate", "rot") WIDTH(1.5);
+   PARM(float, 3, "rot", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(rot.label)
+	HSTRETCH;
+
+}
+
+scale.gad = ROW
+{
+   HSTRETCH
+
+   scale.label = PARM_LABEL("Scale", "scale") WIDTH(1.5);
+   PARM(float, 3, "scale", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(scale.label)
+	HSTRETCH;
+
+}
+
+pivot.gad = ROW
+{
+   HSTRETCH
+
+   pivot.label = PARM_LABEL("Pivot", "pivot") WIDTH(1.5);
+   PARM(float, 3, "pivot", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(pivot.label)
+	HSTRETCH;
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    trans.gad; 
+    rot.gad; 
+    scale.gad; 
+    pivot.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

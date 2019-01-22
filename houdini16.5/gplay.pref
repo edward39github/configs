@@ -1,0 +1,13 @@
+viewLayoutView2 := -1;
+viewLayoutView1 := 1;
+viewLayoutState := 1;
+autoHome := 1;
+wireToggle := "Wireframe Ghost";
+defaultHoming := 0;
+offsetZoomDefault := 0;
+directedDollyDefault := 0;
+setPivotTumbleDefault := 0;
+scrollStyle := 0;
+altKeyViewControls := 0;
+tumbleStyle := 2;
+orientation := "Y Up";

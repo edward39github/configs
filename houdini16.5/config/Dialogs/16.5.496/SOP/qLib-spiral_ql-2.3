@@ -1,0 +1,46 @@
+// Magic: 26174241
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Wed Sep  5 16:00:54 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+origin.gad = ROW
+{
+   HSTRETCH
+
+   origin.label = PARM_LABEL("Origin", "origin") ;
+   PARM(float, 3, "origin", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(origin.label)
+	HSTRETCH;
+
+}
+
+dist.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ dist.label = PARM_LABEL("Height", "dist");
+ PARM(float, 1, "dist", none, field) RANGE(0,20)
+	 LABELREF(dist.label) HSTRETCH;
+
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":12 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":13 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":14 Macro "LOOK_PLAIN" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":15 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH  JUSTIFY(left, center)
+    origin.gad; 
+    dist.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val) HSTRETCH
+
+    dialog_norm.gad;
+}

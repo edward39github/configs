@@ -1,0 +1,127 @@
+// Magic: a82afb3
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Wed Sep  5 16:09:11 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Type", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+}
+
+orient.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Orientation", "orient") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    orient.menu;
+
+    { HSTRETCH }
+
+}
+
+size.gad = ROW
+{
+   HSTRETCH
+
+   size.label = PARM_LABEL("Size", "size") WIDTH(1.5);
+   PARM(float, 2, "size", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(size.label)
+	HSTRETCH;
+
+}
+
+center.gad = ROW
+{
+   HSTRETCH
+
+   center.label = PARM_LABEL("Center", "center") WIDTH(1.5);
+   PARM(float, 3, "center", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(center.label)
+	HSTRETCH;
+
+}
+
+radius.gad = ROW
+{
+   HSTRETCH
+
+   radius.label = PARM_LABEL("Corner Radii", "radius") WIDTH(1.5);
+   PARM(float, 4, "radius", none, none, "X,Y,Z,W")
+	RANGE(-1,1)  LABELREF(radius.label)
+	HSTRETCH;
+
+}
+
+order.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ order.label = PARM_LABEL("Order", "order") WIDTH(1.5);
+ PARM(integer, 1, "order", none, none) RANGE(2,11)
+	LOCK_RANGE LABELREF(order.label) HSTRETCH;
+
+}
+
+divs.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ divs.label = PARM_LABEL("Corner Divisions", "divs") WIDTH(1.5);
+ PARM(integer, 1, "divs", none, none) RANGE(1,50)
+	LOCK_RANGE_MIN LABELREF(divs.label) HSTRETCH;
+
+}
+
+close.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("close", "Closed") toggle VALUE(close.val);
+
+    { HSTRETCH }
+
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "LOOK_PLAIN" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":8 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    type.gad; 
+    orient.gad; 
+    size.gad; 
+    center.gad; 
+    radius.gad; 
+    order.gad; 
+    divs.gad; 
+    close.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

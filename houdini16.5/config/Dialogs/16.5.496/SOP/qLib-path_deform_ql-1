@@ -1,0 +1,121 @@
+// Magic: 595f0025
+// Automatically generated PSI dialog (PSI version 16.5.496)
+// Wed Sep  5 16:30:55 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+pos.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ pos.label = PARM_LABEL("Position", "pos") WIDTH(1.5);
+ PARM(float, 1, "pos", none, none) RANGE(0,1)
+	 LABELREF(pos.label) HSTRETCH;
+
+}
+
+resize.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("resize", "Resize By Segment Length") toggle VALUE(resize.val);
+
+    { HSTRETCH }
+
+}
+
+seglen.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ seglen.label = PARM_LABEL("Segment Length", "seglen") WIDTH(1.5);
+ PARM(float, 1, "seglen", none, none) RANGE(0,1)
+	 LABELREF(seglen.label) HSTRETCH;
+
+}
+
+divs.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ divs.label = PARM_LABEL("Divisions", "divs") WIDTH(1.5);
+ PARM(integer, 1, "divs", none, none) RANGE(0,30)
+	 LABELREF(divs.label) HSTRETCH;
+
+}
+
+resolution.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ resolution.label = PARM_LABEL("Resolution", "resolution") WIDTH(1.5);
+ PARM(integer, 1, "resolution", none, none) RANGE(0,200)
+	 LABELREF(resolution.label) HSTRETCH;
+
+}
+
+up.gad = ROW
+{
+   HSTRETCH
+
+   up.label = PARM_LABEL("Up Vector", "up") WIDTH(1.5);
+   PARM(float, 3, "up", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(up.label)
+	HSTRETCH;
+
+}
+
+interptype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Interpolation", "interptype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    interptype.menu;
+
+    { HSTRETCH }
+
+}
+
+aimatref.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("aimatref", "Aim at Reference Points") toggle VALUE(aimatref.val);
+
+    { HSTRETCH }
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    pos.gad; 
+    resize.gad; 
+    seglen.gad; 
+    divs.gad; 
+    resolution.gad; 
+    up.gad; 
+    interptype.gad; 
+    aimatref.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

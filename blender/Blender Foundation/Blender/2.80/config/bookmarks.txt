@@ -1,0 +1,16 @@
+[Bookmarks]
+C:\Users\edward\CG\
+!Project
+C:\Users\edward\CG\Flat\
+C:\Users\edward\CG\Flat\content\
+C:\Users\edward\CG\Flat\work\
+C:\Users\edward\CG\Flat\temp\
+[Recent]
+C:\Users\edward\Desktop\
+D:\CG\Library\hdri\Pro-Lighting Skies\
+D:\CG\Library\hdri\Pro-Lighting Skies\pro_lighting_skies_demo\
+C:\Users\edward\Desktop\Ferrari 599 GTB\
+C:\Users\edward\CG\Flat\assets\box\geometry\
+C:\Users\edward\Documents\
+C:\Users\edward\CG\Flat\temp\
+C:\Users\edward\CG\Flat\work\
