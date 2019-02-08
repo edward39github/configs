@@ -1,11 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <snippets>
     <snippet group="C++" trigger="alias" id="" complement="" removed="false" modified="false">using $type$ = $alias$</snippet>
+    <snippet group="C++" trigger="clasimpl" id="" complement="" removed="false" modified="false">$clas$::~$clas$(){ }
+
+
+$clas$::$clas$(  )
+{
+    
+}
+
+
+$clas$::$clas$( const $clas$ &amp;other )
+{
+
+}
+
+
+$clas$::$clas$( $clas$ &amp;&amp;other )
+{
+
+}
+
+
+$clas$ 
+&amp;$clas$::operator=( const $clas$ &amp;other )
+{
+    if( this != &amp;other )
+    {
+        
+    }
+    return *this;
+}
+
+
+$clas$ 
+&amp;$clas$::operator=( $clas$ &amp;&amp;other )
+{
+    if( this != &amp;other )
+    {
+        
+    }
+    return *this;
+}</snippet>
     <snippet group="C++" trigger="class" id="cpp_genericclass" complement="" removed="false" modified="true">class $name$
 {
 
-/* Constructors and destructor */
-public:
+
+public: /* Constructors and destructor */
     
     virtual
     ~$name$(); 
@@ -17,8 +58,8 @@ public:
     $name$( const $name$&amp; other );
 
 
-/* Operators */    
-public:
+   
+public: /* Operators */ 
     
     $name$&amp; 
     operator=( $name$&amp;&amp; other );
@@ -27,34 +68,34 @@ public:
     operator=( const $name$&amp; other );
 
     
-/* Getters */
-public:
-    
-    
-    
-/* Setters */
-public:
-    
 
+public: /* Getters */
     
-/* Methods */
-public:
-    
-
-    
-/* Members */
-private:
     
     
 
-/* Private methods */
-private:</snippet>
+public: /* Setters */
+    
+
+    
+
+public: /* Methods */
+    
+
+    
+
+private: /* Members */
+    
+    
+
+
+private: /* Private methods */</snippet>
     <snippet group="C++" trigger="class" id="cpp_qobjectclass" complement="derived from QObject" removed="false" modified="true">class $name$ : public QObject
 {
     Q_OBJECT
 
-/* Constructors and destructor */
-public:
+
+public: /* Constructors and destructor */
     
     virtual
     ~$name$(); 
@@ -66,8 +107,8 @@ public:
     $name$( const $name$&amp; other );
 
 
-/* Operators */    
-public:
+    
+public: /* Operators */
     
     $name$&amp; 
     operator=( $name$&amp;&amp; other );
@@ -76,40 +117,40 @@ public:
     operator=( const $name$&amp; other );
 
     
-/* Getters */
-public:
-    
-    
-    
-/* Setters */
-public:
-    
-    
-    
-/* Signals */
-public signals:
-    
 
+public: /* Getters */
     
-/* Methods */
-public:
-    
-
-    
-/* Members */
-private:
     
     
 
-/* Private methods */
-private:
+public: /* Setters */
+    
+    
+    
+
+public signals: /* Signals */
+    
+
+    
+
+public: /* Methods */
+    
+
+    
+
+private: /* Members */
+    
+    
+
+
+private: /* Private methods */
     </snippet>
     <snippet group="C++" trigger="class" id="cpp_qwidgetclass" complement="derived from QWidget" removed="false" modified="true">class $name$ : public QWidget
 {
     Q_OBJECT
 
-/* Constructors and destructor */
-public:
+
+public: /* Constructors and destructor */
     
     virtual
     ~$name$(); 
@@ -117,40 +158,40 @@ public:
     $name$();
 
     
-/* Getters */
-public:
-    
-    
-    
-/* Setters */
-public:
-    
-    
-    
-/* Signals */
-public signals:
-    
 
+public: /* Getters */
     
-/* Methods */
-public:
-    
-
-    
-/* Members */
-private:
     
     
 
-/* Private methods */
-private:
+public: /* Setters */
+    
+    
+    
+
+public signals: /* Signals */
+    
+
+    
+
+public: /* Methods */
+    
+
+    
+
+private: /* Members */
+    
+    
+
+
+private: /* Private methods */
 </snippet>
     <snippet group="C++" trigger="class" id="cpp_classtemplate" complement="template" removed="false" modified="true">template &lt;typename $T$&gt;
 class $name$
 {
 
-/* Constructors and destructor */
-public:
+
+public: /* Constructors and destructor */
     
     virtual
     ~$name$(); 
@@ -168,8 +209,8 @@ public:
     }
 
 
-/* Operators */    
-public:
+
+public: /* Operators */    
     
     $name$&amp; 
     operator=( $name$&amp;&amp; other )
@@ -194,28 +235,29 @@ public:
     }
 
     
-/* Getters */
-public:
-    
-    
-    
-/* Setters */
-public:
-    
 
+public: /* Getters */
     
-/* Methods */
-public:
-    
-
-    
-/* Members */
-private:
     
     
 
-/* Private methods */
-private:</snippet>
+public: /* Setters */
+    
+
+    
+
+public: /* Methods */
+    
+
+    
+
+private: /* Members */
+    
+    
+
+
+private: /* Private methods */</snippet>
+    <snippet group="C++" trigger="comm" id="" complement="" removed="false" modified="false">/* $$ */</snippet>
     <snippet group="C++" trigger="do" id="cpp_do" complement="" removed="false" modified="true">do 
 {
     $$
@@ -277,6 +319,7 @@ else
 {
     $$
 } // namespace $name$</snippet>
+    <snippet group="C++" trigger="print" id="" complement="" removed="false" modified="false">qDebug() &lt;&lt; $$;</snippet>
     <snippet group="C++" trigger="switch" id="cpp_switch" complement="" removed="false" modified="true">switch ($control$) 
 {
 case $value$:
