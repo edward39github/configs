@@ -16,18 +16,18 @@
   <style name="Occurrences.Rename" foreground="#ffaaaa" background="#553636"/>
   <style name="Number" foreground="#709169"/>
   <style name="String" foreground="#5e8221"/>
-  <style name="Type" foreground="#be8143"/>
-  <style name="Local" foreground="#818fa0"/>
+  <style name="Type" foreground="#aa733c" bold="true"/>
+  <style name="Local" foreground="#a09d7a"/>
   <style name="Global" foreground="#8698d3" bold="true"/>
   <style name="Field" foreground="#865455" italic="true"/>
   <style name="Static" foreground="#7751b4" italic="true"/>
-  <style name="VirtualMethod" foreground="#4f827e" bold="true" italic="true"/>
-  <style name="Function" foreground="#4f827d" bold="true"/>
+  <style name="VirtualMethod" foreground="#4f8260" bold="true" italic="true"/>
+  <style name="Function" foreground="#8181a0" bold="true"/>
   <style name="Keyword" foreground="#12b9b9" bold="true"/>
-  <style name="PrimitiveType" foreground="#be8143"/>
-  <style name="Operator" foreground="#d6bb9a"/>
+  <style name="PrimitiveType" foreground="#aa733c" bold="true"/>
+  <style name="Operator" foreground="#a08d8d" bold="true"/>
   <style name="Overloaded Operator"/>
-  <style name="Punctuation" bold="true"/>
+  <style name="Punctuation" foreground="#a08d8d" bold="true"/>
   <style name="Preprocessor" foreground="#aa4a68" bold="true" italic="true"/>
   <style name="Label" foreground="#d6c540"/>
   <style name="Comment" foreground="#6f7074" italic="true"/>
@@ -61,7 +61,7 @@
   <style name="WarningContext" underlineColor="#d6c545" underlineStyle="DotLine"/>
   <style name="Error" underlineColor="#d65645" underlineStyle="SingleUnderline"/>
   <style name="ErrorContext" underlineColor="#d65645" underlineStyle="DotLine"/>
-  <style name="Declaration" foreground="#4f827e" bold="true"/>
-  <style name="FunctionDefinition" foreground="#4f827e" bold="true"/>
+  <style name="Declaration" foreground="#4f827e" bold="true" italic="true"/>
+  <style name="FunctionDefinition" foreground="#4f827e" bold="true" italic="true"/>
   <style name="OutputArgument" italic="true"/>
 </style-scheme>

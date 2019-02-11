@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <snippets>
     <snippet group="C++" trigger="alias" id="" complement="" removed="false" modified="false">using $type$ = $alias$</snippet>
-    <snippet group="C++" trigger="clasimpl" id="" complement="" removed="false" modified="false">$clas$::~$clas$(){ }
+    <snippet group="C++" trigger="clasimpl" id="" complement="" removed="false" modified="false">#include &lt;utility&gt;
+
+$clas$::~$clas$(){ }
 
 
 $clas$::$clas$(  )
@@ -10,37 +12,50 @@ $clas$::$clas$(  )
 }
 
 
-$clas$::$clas$( const $clas$ &amp;other )
+$clas$::$clas$( const $clas$&amp; other )
 {
-
+    copyFromOther( other );
 }
 
 
-$clas$::$clas$( $clas$ &amp;&amp;other )
+$clas$::$clas$( $clas$&amp;&amp; other )
 {
-
+    moveFromOther( std::move(other) );
 }
 
 
-$clas$ 
-&amp;$clas$::operator=( const $clas$ &amp;other )
+$clas$&amp;
+$clas$::operator=( const $clas$&amp; other )
 {
     if( this != &amp;other )
     {
-        
+        copyFromOther( other );
     }
     return *this;
 }
 
 
-$clas$ 
-&amp;$clas$::operator=( $clas$ &amp;&amp;other )
+$clas$&amp;
+$clas$::operator=( $clas$&amp;&amp; other )
 {
     if( this != &amp;other )
     {
-        
+        moveFromOther( std::move(other) );
     }
     return *this;
+}
+
+void 
+$clas$::copyFromOther( const $name$&amp; other )
+{
+    
+}
+
+
+void 
+$clas$::moveFromOther( $name$&amp;&amp; other )
+{
+    
 }</snippet>
     <snippet group="C++" trigger="class" id="cpp_genericclass" complement="" removed="false" modified="true">class $name$
 {
@@ -89,7 +104,14 @@ private: /* Members */
     
 
 
-private: /* Private methods */</snippet>
+private: /* Private methods */
+    
+    void 
+    copyFromOther( const $name$&amp; other );
+    
+    void 
+    moveFromOther( $name$&amp;&amp; other );
+};</snippet>
     <snippet group="C++" trigger="class" id="cpp_qobjectclass" complement="derived from QObject" removed="false" modified="true">class $name$ : public QObject
 {
     Q_OBJECT
@@ -144,7 +166,13 @@ private: /* Members */
 
 
 private: /* Private methods */
-    </snippet>
+    
+    void 
+    copyFromOther( const $name$&amp; other );
+    
+    void 
+    moveFromOther( $name$&amp;&amp; other );
+};</snippet>
     <snippet group="C++" trigger="class" id="cpp_qwidgetclass" complement="derived from QWidget" removed="false" modified="true">class $name$ : public QWidget
 {
     Q_OBJECT
@@ -185,7 +213,13 @@ private: /* Members */
 
 
 private: /* Private methods */
-</snippet>
+    
+    void 
+    copyFromOther( const $name$&amp; other );
+    
+    void 
+    moveFromOther( $name$&amp;&amp; other );
+};</snippet>
     <snippet group="C++" trigger="class" id="cpp_classtemplate" complement="template" removed="false" modified="true">template &lt;typename $T$&gt;
 class $name$
 {
@@ -256,8 +290,20 @@ private: /* Members */
     
 
 
-private: /* Private methods */</snippet>
+private: /* Private methods */
+    
+    void 
+    copyFromOther( const $name$&amp; other );
+    
+    void 
+    moveFromOther( $name$&amp;&amp; other );
+};</snippet>
     <snippet group="C++" trigger="comm" id="" complement="" removed="false" modified="false">/* $$ */</snippet>
+    <snippet group="C++" trigger="copymove" id="" complement="" removed="false" modified="false">void 
+copyFromOther( const $name$&amp; other );
+
+void 
+moveFromOther( $name$&amp;&amp; other );</snippet>
     <snippet group="C++" trigger="do" id="cpp_do" complement="" removed="false" modified="true">do 
 {
     $$
