@@ -14,13 +14,13 @@ $clas$::$clas$(  )
 
 $clas$::$clas$( const $clas$&amp; other )
 {
-    copyFromOther( other );
+    
 }
 
 
 $clas$::$clas$( $clas$&amp;&amp; other )
 {
-    moveFromOther( std::move(other) );
+    
 }
 
 
@@ -29,7 +29,7 @@ $clas$::operator=( const $clas$&amp; other )
 {
     if( this != &amp;other )
     {
-        copyFromOther( other );
+        
     }
     return *this;
 }
@@ -40,41 +40,26 @@ $clas$::operator=( $clas$&amp;&amp; other )
 {
     if( this != &amp;other )
     {
-        moveFromOther( std::move(other) );
+        
     }
     return *this;
-}
-
-void 
-$clas$::copyFromOther( const $name$&amp; other )
-{
-    
-}
-
-
-void 
-$clas$::moveFromOther( $name$&amp;&amp; other )
-{
-    
 }</snippet>
     <snippet group="C++" trigger="class" id="cpp_genericclass" complement="" removed="false" modified="true">class $name$
 {
 
-
-public: /* Constructors and destructor */
+public: /* Constructors and destructor --------------------------------------------------- */
+/* --------------------------------------------------------------------------------------- */
     
     virtual
     ~$name$(); 
-    
     $name$();
-    
     $name$( $name$&amp;&amp; other );
-    
     $name$( const $name$&amp; other );
 
 
-   
-public: /* Operators */ 
+
+public: /* Operators --------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------- */   
     
     $name$&amp; 
     operator=( $name$&amp;&amp; other );
@@ -84,33 +69,33 @@ public: /* Operators */
 
     
 
-public: /* Getters */
+public: /* Getters ----------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------- */
     
     
     
 
-public: /* Setters */
+public: /* Setters ----------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------- */
     
 
     
 
-public: /* Methods */
+public: /* Methods ----------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------- */
     
 
     
 
-private: /* Members */
+private: /* Members ---------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------- */
     
     
 
+    
+private: /* Private methods -------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------- */
 
-private: /* Private methods */
-    
-    void 
-    copyFromOther( const $name$&amp; other );
-    
-    void 
-    moveFromOther( $name$&amp;&amp; other );
 };</snippet>
     <snippet group="C++" trigger="class" id="cpp_qobjectclass" complement="derived from QObject" removed="false" modified="true">class $name$ : public QObject
 {
@@ -316,6 +301,11 @@ moveFromOther( $name$&amp;&amp; other );</snippet>
 {
     $$
 }</snippet>
+    <snippet group="C++" trigger="enum" id="" complement="" removed="false" modified="false">enum E$name$
+{
+    $$
+};
+</snippet>
     <snippet group="C++" trigger="for" id="cpp_for" complement="" removed="false" modified="true">for( int $var$ = 0; $var$ &lt; $total$; ++$var$ ) 
 {
     $$
@@ -366,13 +356,13 @@ else
     $$
 } // namespace $name$</snippet>
     <snippet group="C++" trigger="print" id="" complement="" removed="false" modified="false">qDebug() &lt;&lt; $$;</snippet>
-    <snippet group="C++" trigger="switch" id="cpp_switch" complement="" removed="false" modified="true">switch ($control$) 
+    <snippet group="C++" trigger="switch" id="cpp_switch" complement="" removed="false" modified="true">switch( $control$ ) 
 {
-case $value$:
-    $$
-    break;
-default:
-    break;
+    case $value$:
+    {
+        $$
+        break;
+    }
 }</snippet>
     <snippet group="C++" trigger="try" id="cpp_trycatch" complement="and catch" removed="false" modified="true">try 
 {
