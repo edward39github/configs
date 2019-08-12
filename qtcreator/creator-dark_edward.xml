@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <style-scheme version="1.0" name="Edward Editor">
-  <style name="Text" foreground="#a5987e" background="#303032"/>
+  <style name="Text" foreground="#a5987e" background="#1a171f"/>
   <style name="Link" foreground="#d6c540"/>
   <style name="Selection" foreground="#bec0c2" background="#1d545c"/>
-  <style name="LineNumber" foreground="#939596" background="#404244"/>
+  <style name="LineNumber" foreground="#3e4a3e" background="#1c1c1f"/>
   <style name="SearchResult" background="#8a7f2c"/>
   <style name="SearchScope" background="#8a602c"/>
   <style name="Parentheses" foreground="#bec0c2" background="#1d545c"/>
@@ -15,24 +15,24 @@
   <style name="Occurrences.Unused" foreground="#8a7f2c"/>
   <style name="Occurrences.Rename" foreground="#ffaaaa" background="#553636"/>
   <style name="Number" foreground="#709169"/>
-  <style name="String" foreground="#5e8221"/>
-  <style name="Type" foreground="#aa733c" bold="true"/>
+  <style name="String" foreground="#4f8237"/>
+  <style name="Type" foreground="#aa6a4a" bold="true"/>
   <style name="Local" foreground="#8c8b84"/>
-  <style name="Global" foreground="#8698d3" bold="true"/>
-  <style name="Field" foreground="#4f6e96" italic="true"/>
-  <style name="Static" foreground="#7751b4" italic="true"/>
+  <style name="Global" foreground="#8b6ed3" bold="true"/>
+  <style name="Field" foreground="#4f6e96"/>
+  <style name="Static" foreground="#7751b4"/>
   <style name="VirtualMethod" foreground="#4f8260" bold="true" italic="true"/>
   <style name="Function" foreground="#8181a0" bold="true"/>
-  <style name="Keyword" foreground="#53aaaa" bold="true"/>
-  <style name="PrimitiveType" foreground="#aa733c" bold="true"/>
-  <style name="Operator" foreground="#8c7c7c" bold="true"/>
+  <style name="Keyword" foreground="#529baa" bold="true"/>
+  <style name="PrimitiveType" foreground="#aa6a4a" bold="true"/>
+  <style name="Operator" foreground="#8c7c7c"/>
   <style name="Overloaded Operator"/>
-  <style name="Punctuation" foreground="#8c7c7c" bold="true"/>
+  <style name="Punctuation" foreground="#8c7c7c"/>
   <style name="Preprocessor" foreground="#aa4a68" bold="true" italic="true"/>
   <style name="Label" foreground="#d6c540"/>
-  <style name="Comment" foreground="#6f7074" italic="true"/>
-  <style name="Doxygen.Comment" foreground="#6f7074" bold="true" italic="true"/>
-  <style name="Doxygen.Tag" foreground="#66a334"/>
+  <style name="Comment" foreground="#3e3f41" bold="true"/>
+  <style name="Doxygen.Comment" foreground="#393d46"/>
+  <style name="Doxygen.Tag" foreground="#2d444b" bold="true"/>
   <style name="VisualWhitespace" foreground="#bec0c2"/>
   <style name="QmlLocalId" foreground="#9acfd6" italic="true"/>
   <style name="QmlExternalId" foreground="#9aa7d6" italic="true"/>
@@ -45,7 +45,7 @@
   <style name="JsGlobalVar" foreground="#4564d6" italic="true"/>
   <style name="QmlStateName" foreground="#45c6d6" italic="true"/>
   <style name="Binding" foreground="#ff6aad"/>
-  <style name="DisabledCode" foreground="#999999" background="#474747"/>
+  <style name="DisabledCode" foreground="#999999" background="#313131"/>
   <style name="AddedLine" foreground="#45c6d6"/>
   <style name="RemovedLine" foreground="#d65645"/>
   <style name="DiffFile" foreground="#66a334"/>
@@ -61,7 +61,7 @@
   <style name="WarningContext" underlineColor="#d6c545" underlineStyle="DotLine"/>
   <style name="Error" underlineColor="#d65645" underlineStyle="SingleUnderline"/>
   <style name="ErrorContext" underlineColor="#d65645" underlineStyle="DotLine"/>
-  <style name="Declaration" foreground="#525faa" bold="true" italic="true"/>
-  <style name="FunctionDefinition" foreground="#525faa" bold="true" italic="true"/>
+  <style name="Declaration" foreground="#8181a0" bold="true" italic="true"/>
+  <style name="FunctionDefinition" foreground="#8181a0" bold="true" italic="true"/>
   <style name="OutputArgument" italic="true"/>
 </style-scheme>
