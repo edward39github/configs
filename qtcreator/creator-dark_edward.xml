@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <style-scheme version="1.0" name="Edward Editor">
-  <style name="Text" foreground="#a5987e" background="#1a171f"/>
+  <style name="Text" foreground="#4a3d4a" background="#1a171f"/>
   <style name="Link" foreground="#d6c540"/>
-  <style name="Selection" foreground="#bec0c2" background="#1d545c"/>
-  <style name="LineNumber" foreground="#3e4a3e" background="#1c1c1f"/>
+  <style name="Selection" foreground="#9fa1a2" background="#5c2051"/>
+  <style name="LineNumber" foreground="#4a3d4a" background="#1a171f"/>
   <style name="SearchResult" background="#8a7f2c"/>
   <style name="SearchScope" background="#8a602c"/>
   <style name="Parentheses" foreground="#bec0c2" background="#1d545c"/>
@@ -17,7 +17,7 @@
   <style name="Number" foreground="#709169"/>
   <style name="String" foreground="#4f8237"/>
   <style name="Type" foreground="#aa6a4a" bold="true"/>
-  <style name="Local" foreground="#8c8b84"/>
+  <style name="Local" foreground="#735f73"/>
   <style name="Global" foreground="#8b6ed3" bold="true"/>
   <style name="Field" foreground="#4f6e96"/>
   <style name="Static" foreground="#7751b4"/>
@@ -25,12 +25,12 @@
   <style name="Function" foreground="#8181a0" bold="true"/>
   <style name="Keyword" foreground="#529baa" bold="true"/>
   <style name="PrimitiveType" foreground="#aa6a4a" bold="true"/>
-  <style name="Operator" foreground="#8c7c7c"/>
+  <style name="Operator" foreground="#735f73"/>
   <style name="Overloaded Operator"/>
-  <style name="Punctuation" foreground="#8c7c7c"/>
-  <style name="Preprocessor" foreground="#aa4a68" bold="true" italic="true"/>
+  <style name="Punctuation" foreground="#735f73"/>
+  <style name="Preprocessor" foreground="#aa4a68" bold="true"/>
   <style name="Label" foreground="#d6c540"/>
-  <style name="Comment" foreground="#3e3f41" bold="true"/>
+  <style name="Comment" foreground="#3f3a41" bold="true"/>
   <style name="Doxygen.Comment" foreground="#393d46"/>
   <style name="Doxygen.Tag" foreground="#2d444b" bold="true"/>
   <style name="VisualWhitespace" foreground="#bec0c2"/>
@@ -45,7 +45,7 @@
   <style name="JsGlobalVar" foreground="#4564d6" italic="true"/>
   <style name="QmlStateName" foreground="#45c6d6" italic="true"/>
   <style name="Binding" foreground="#ff6aad"/>
-  <style name="DisabledCode" foreground="#999999" background="#313131"/>
+  <style name="DisabledCode" foreground="#4a4a4a" background="#262626"/>
   <style name="AddedLine" foreground="#45c6d6"/>
   <style name="RemovedLine" foreground="#d65645"/>
   <style name="DiffFile" foreground="#66a334"/>
